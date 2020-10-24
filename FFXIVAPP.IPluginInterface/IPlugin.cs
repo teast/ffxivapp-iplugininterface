@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="IPlugin.cs" company="SyndicatedLife">
-//   Copyright© 2007 - 2020 Ryan Wilson &amp;lt;syndicated.life@gmail.com&amp;gt; (https://syndicated.life/)
+//   Copyrightï¿½ 2007 - 2020 Ryan Wilson &amp;lt;syndicated.life@gmail.com&amp;gt; (https://syndicated.life/)
 //   Licensed under the MIT license. See LICENSE.md in the solution root for full license information.
 // </copyright>
 // <summary>
@@ -11,11 +11,9 @@
 namespace FFXIVAPP.IPluginInterface {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.Composition;
-    using System.Windows;
-    using System.Windows.Controls;
+    using Avalonia.Controls;
 
-    [InheritedExport(typeof(IPlugin)),]
+    // TODO: Needed? [InheritedExport(typeof(IPlugin)),]
     public interface IPlugin {
         string Copyright { get; }
 
@@ -31,7 +29,7 @@ namespace FFXIVAPP.IPluginInterface {
 
         string Notice { get; }
 
-        MessageBoxResult PopupResult { get; set; }
+        FFXIVAPP.Common.WPF.MessageBoxResult PopupResult { get; set; }
 
         Exception Trace { get; }
 
